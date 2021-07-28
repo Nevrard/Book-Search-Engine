@@ -5,6 +5,9 @@ const {signToken} = require('../utils/auth');
 const resolvers={
     Query:{
         me: async(parent, args, context)=>{
+            // right now the urser is showing as logged in on the nav but not returning as logged in
+            // for this call. NEXT STEPS: log context, try loggin out and loggin back in and accessing this page
+            //console.log(context)
             if(context.user){
                 const userData = await User.findOne({_id: context.user._id})
                     .select('-__v -password')
