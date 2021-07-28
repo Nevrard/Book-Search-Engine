@@ -19,8 +19,7 @@ const PORT = process.env.PORT || 3001;
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  dataSources: () => ({}),
-  introspection: true
+  context: authMiddleware
 });
 
 // integrate the Apollo server with the Express application as middleware
