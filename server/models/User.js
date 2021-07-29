@@ -18,7 +18,7 @@ const userSchema = new Schema(
       match: [/.+@.+\..+/, 'Must use a valid email address'],
     },
     password: {
-      type: String,
+      type: String, 
       required: true,
     },
     // set savedBooks to be an array of data that adheres to the bookSchema
@@ -29,6 +29,7 @@ const userSchema = new Schema(
     toJSON: {
       virtuals: true,
     },
+
   }
 );
 
